@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Greet } from './components/greet';
+import { Person } from './components/person';
+import { Persons } from './components/persons';
 
 function App() {
+  let persons = [
+    {first_name: "Jide",
+     last_name: "Dosumu" 
+    },
+    {first_name: "Segun",
+     last_name: "Oshodi"
+    },
+    {first_name: "Deji",
+     last_name: "Adeyemi"
+    }
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Greet name="Adedeji" count={1} isLoggedIn={false}/>
+      <Person first_name='Faruq' last_name='Adeyemi' />
+      <Persons names={persons} />
+    </>
+  )    
 }
 
 export default App;
